@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Simple Ecommerce</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .cart {
+            background: #3498db;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 20px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            background: white;
+            color: #667eea;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .products {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 20px;
+        }
+        
+        .products h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #2c3e50;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: #ecf0f1;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .product-card h3 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .product-card p {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            color: #27ae60;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            background: #3498db;
+            color: white;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background: #2980b9;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 20px;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">TechStore</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="cart">Cart (0)</div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to TechStore</h1>
+        <p>Discover amazing products at unbeatable prices</p>
+        <button class="btn">Shop Now</button>
+    </section>
+
+    <section class="products" id="products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">💻</div>
+                <h3>Laptop Pro</h3>
+                <p>High-performance laptop for professionals</p>
+                <div class="price">$999.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">📱</div>
+                <h3>Smartphone X</h3>
+                <p>Latest smartphone with amazing features</p>
+                <div class="price">$699.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🎧</div>
+                <h3>Wireless Headphones</h3>
+                <p>Premium sound quality and comfort</p>
+                <div class="price">$199.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">⌚</div>
+                <h3>Smart Watch</h3>
+                <p>Track your fitness and stay connected</p>
+                <div class="price">$299.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">📷</div>
+                <h3>Digital Camera</h3>
+                <p>Capture moments in stunning quality</p>
+                <div class="price">$799.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🖥️</div>
+                <h3>4K Monitor</h3>
+                <p>Crystal clear display for work and play</p>
+                <div class="price">$449.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 TechStore. All rights reserved.</p>
+            <p>Contact us: info@techstore.com | Phone: (555) 123-4567</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple cart functionality
+        let cartCount = 0;
+        const cartElement = document.querySelector('.cart');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                cartCount++;
+                cartElement.textContent = `Cart (${cartCount})`;
+                button.textContent = 'Added!';
+                setTimeout(() => {
+                    button.textContent = 'Add to Cart';
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
